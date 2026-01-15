@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Equestrian Stockholm Vibes: Clean, Elegant, Nature & Luxury */
+  --background: #FFFFFF;
+  /* Crisp White */
+  --foreground: #2C2C2C;
+  /* Soft Charcoal */
+
+  /* Palette */
+  --primary-navy: #1B263B;
+  /* Deep Blue */
+  --primary-gold: #C5A065;
+  /* Muted Champagne Gold */
+  --soft-beige: #F5F3F0;
+  /* Light background accent */
+  --accent-burgundy: #5D2E2E;
+  /* Rich accent */
+
+  /* Surfaces */
+  --surface-white: #FFFFFF;
+  --surface-offwhite: #FAFAFA;
+  --border-light: #E5E5E5;
+
+  /* Typography */
+  --font-heading: 'Garamond', 'Playfair Display', serif;
+  /* More classic serif */
+  --font-body: 'Helvetica Neue', 'Inter', sans-serif;
+  /* Clean sans */
+
+  --max-width: 1400px;
+  /* Wider layout */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  /* Lighter weights for elegance */
+  letter-spacing: 0.05em;
+  color: var(--primary-navy);
+  text-transform: uppercase;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Redesigned Button - "Shop the Look" style */
+.btn-primary {
+  background-color: var(--primary-navy);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 0;
+  /* Boxy/Sharp */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--primary-navy);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--primary-navy);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border: 1px solid #fff;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}

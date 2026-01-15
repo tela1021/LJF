@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model NewsItem {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  summary     String?
+  content     String
+  image       String?
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  title       String
+  location    String?
+  date        DateTime
+  description String?
+  createdAt   DateTime @default(now())
+}
+
+model Rider {
+  id           String   @id @default(uuid())
+  name         String
+  horseName    String?
+  bio          String?
+  image        String?
+  achievements String?
+  createdAt    DateTime @default(now())
+}
